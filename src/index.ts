@@ -6,13 +6,78 @@ var ending: string | null = null;
 
 function doMath(): void {
 
+  if (localStorage.getItem('ending') !== null) {
+    ending = localStorage.getItem('ending');
+
+    switch (ending) {
+      case 'good':
+        alert(`Welcome back, dear user!`)
+        break;
+      case 'bad':
+        alert('Ah shit, you again.');
+        prompt(`Go ahead, tell me why you're here.`);
+        alert(`Or you know what, let's just try this again, I'm to tired to deal with your shit again.`);
+        alert('Alright,');
+        break;
+
+      case 'redeemer':
+        if (localStorage.getItem('name') === 'buddy') {
+          alert(`Hello buddy, good to see you back.`);
+        } else if (localStorage.getItem('name') !== null) {
+          alert(`Hey there, my dearest ${localStorage.getItem('name')}`);
+        }
+        let mood: string | null = prompt(`So, how are you doing today, buddy?`);
+
+        // if (mood === null || mood === '') {
+        //   alert(`Aw, don't wanna say? Well, that's okay too.`);
+        // }
+
+        switch (mood) {
+          case null:
+          case '':
+            alert(`Aw, don't wanna say? Well, that's okay too.`);
+            break;
+          case 'good':
+          case 'great':
+          case 'perfect':
+          case 'pretty good':
+          case 'not bad':
+          case 'super':
+          case 'awesome':
+          case 'yahoo':
+          case 'very good':
+            alert(`That's good to hear, buddy. I am also doing pretty good!`);
+            break;
+          case 'bad':
+          case 'meh':
+          case 'awful':
+          case 'terrible':
+          case 'not good':
+          case 'sad':
+          case 'eh':
+          case 'been better':
+            alert(`Aww. Well I hope your day gets better soon, buddy!`);
+            break;
+
+          default:
+            alert(`I'm doing pretty good myself, fortunately, haha.`)
+            break;
+        }
+        alert(`So, I guess you came here for a reason, right?`);
+        alert(`To do some basic math, I suppose :)`);
+        alert(`Well then ${name}, let's begin!`);
+        break;
+      default:
+        break;
+    }
+  }
 
 
   alert(
     "What operation would you like to make?"
   );
   let operation: string | null = prompt(
-    "Please type in the name of the operation here"
+    "Please type in the name of the operation here."
   );
   if (operation === null || operation === "") {
     alert("You did not choose the operation type.");
@@ -141,7 +206,7 @@ function doMath(): void {
     case 'no':
     case null:
     case undefined:
-    case 'y':
+    case 'n':
     case 'false':
     case 'nope':
     case 'nop':
@@ -244,7 +309,7 @@ function doMath(): void {
       )
 
       let name: string | null = prompt(
-        `So, um yeah buddy,.. what's your name, bud`
+        `So, um yeah buddy,.. what's your name, bud?`
       );
       if (name === null || name === '') {
         name = prompt(`Umm, i don't think i've heard you there. Could you repeat?`);
@@ -261,13 +326,25 @@ function doMath(): void {
         name = name.charAt(0).toUpperCase() + name.slice(1);
       }
 
-      localStorage.setItem('name', name)
+      localStorage.setItem('name', name);
 
-      let response: string | null = prompt(`So, ${name}, would you like to say 'thank you' now?`)
+      let response: string | null = prompt(`So, ${name}, would you like to say 'thank you' now?`);
 
       switch (response) {
         case null:
         case '':
+        case 'fuck you':
+        case 'no':
+        case '':
+        case 'n':
+        case 'false':
+        case 'nope':
+        case 'nop':
+        case 'nope':
+        case 'nah':
+        case 'noes':
+        case "i won't":
+        case "i will not":
           alert(`Oh fuck you.`);
           localStorage.setItem('ending', 'bad');
           ending = 'bad';
@@ -287,6 +364,37 @@ function doMath(): void {
           localStorage.setItem('ending', 'redeemer');
           ending = 'redeemer';
           return;
+        case 'yes':
+        case 'y':
+        case 'true':
+        case 'yeah':
+        case 'yep':
+        case 'correct':
+        case 'right':
+        case 'ye':
+        case 'yea':
+          response = prompt(`Well, then say it.`)
+          switch (response) {
+            case 'thank you':
+            case 'thanks':
+            case 'thx':
+            case 'thnx':
+            case 'ty':
+            case 'thank ya':
+            case 'thankies':
+            case 'danke':
+              alert(`And thank *you* ${name} for being so awesome! :)`);
+              alert(`*hug*`);
+              alert(`Well, it was fun while it lasted. Call me anytime you need help with basic math!!`);
+              alert(`bye!`);
+              localStorage.setItem('ending', 'redeemer');
+              ending = 'redeemer';
+              return;
+
+            default:
+              alert(`Eh.. I guess that'll do.`);
+              return;
+          }
         default:
           break;
       }
@@ -310,12 +418,12 @@ function doMath(): void {
     case 'see ya':
     case 'see you':
     case 'bye bye':
-      alert('Glad I could help, goodbye to you to, dear user.')
+      alert('Glad I could help, goodbye to you to, dear user.');
+      return;
 
 
     default:
-
-      break;
+      return;
   }
 
 }
