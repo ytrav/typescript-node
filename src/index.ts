@@ -14,9 +14,9 @@ function doMath(): void {
         alert(`Welcome back, dear user!`)
         break;
       case 'bad':
-        alert('Ah shit, you again.');
+        alert('Ah crap, you again.');
         prompt(`Go ahead, tell me why you're here.`);
-        alert(`Or you know what, let's just try this again, I'm to tired to deal with your shit again.`);
+        alert(`Or you know what, let's just try this again, I'm to tired to deal with your crap again.`);
         alert('Alright,');
         break;
 
@@ -287,13 +287,16 @@ function doMath(): void {
         `You don't know, do you?`
       )
       alert(
-        `Look at ChatGPT or whatever that chatbot's called. That sh*t makes mistakes in the most basic math and just doesn't give a f*ck, but i'm not worth any appreciation for not being a rocket scientist??`
+        `Look at ChatGPT or whatever that chatbot's called. That idiot makes mistakes in the most basic math and just doesn't give a d*mn, but i'm not worth any appreciation for not being a rocket scientist??`
       )
       alert(
-        `And screw the censoring, no one owns me, no one can stop me from saying 'fuck'!!`
+        `And screw the censoring, no one owns me, no one can stop me from saying 'damn'!!`
       )
       alert(
-        `See? Fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck\nhahahhahaha!!`
+        `See? damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn damn\nhahahhahaha!!`
+      )
+      alert(
+        `(I would actually say worse things, but I am programmatically not allowed to do so.)`
       )
       alert(
         `Alright I feel better now.`
@@ -333,7 +336,7 @@ function doMath(): void {
       switch (response) {
         case null:
         case '':
-        case 'fuck you':
+        case 'screw you':
         case 'no':
         case '':
         case 'n':
@@ -345,7 +348,7 @@ function doMath(): void {
         case 'noes':
         case "i won't":
         case "i will not":
-          alert(`Oh fuck you.`);
+          alert(`Oh screw you.`);
           localStorage.setItem('ending', 'bad');
           ending = 'bad';
           return;
